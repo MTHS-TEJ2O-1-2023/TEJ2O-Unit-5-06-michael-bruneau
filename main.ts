@@ -5,6 +5,12 @@
  * This program Dectects distanse uising sonar
 */
 
+// variables
+let distanceToObject: number = 0
 // setup
 basic.clearScreen()
-basic.pause(1000)
+basic.showIcon(IconNames.Happy)
+
+input.buttonIsPressed(Button.A, function () {
+  distanceToObject = sonar.ping()
+})
