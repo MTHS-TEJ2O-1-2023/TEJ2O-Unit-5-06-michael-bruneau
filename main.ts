@@ -18,4 +18,6 @@ input.onButtonPressed(Button.A, function () {
     DigitalPin.P2,
     PingUnit.Centimeters
   )
+  basic.showNumber(distanceToObject)
+  basic.showIcon(IconNames.Happy)
 })
