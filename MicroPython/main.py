@@ -59,6 +59,7 @@ display.show(Image.HEART)
 while True:
     if button_a.is_pressed():
         display.clear()
-        display.show(sonar.distance_mm() / 10)
+        distance = sonar.distance_mm() / 10
+        display.show(distance)
         sleep(1000)
         display.show(Image.HEART)
