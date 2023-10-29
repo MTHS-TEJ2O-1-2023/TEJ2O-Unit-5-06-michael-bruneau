@@ -42,20 +42,25 @@ class HCSR04:
             try:
                 k, value = next(
                     (ind, v)
-                    for ind, v in enumerate(resp[i : length - 2])
+                    for ind, v in enumerate(resp[i: length - 2])
                     if resp[i + ind + 1] == 0
                 )
                 post = bin(value).count("1") if k else 0
                 k = k + i
             except StopIteration:
                 i = -1
-        dist = -1 if i < 0 else round(((pre + (k - i) * 8.0 + post) * 8 * 0.172) / 2)
+        dist = - \
+            1 if i < 0 else round(
+                ((pre + (k - i) * 8.0 + post) * 8 * 0.172) / 2)
         return dist
 
-
+# variabels
 sonar = HCSR04()
+
+# setup
 display.show(Image.HEART)
 
+# checking distance from object
 while True:
     if button_a.is_pressed():
         display.clear()
